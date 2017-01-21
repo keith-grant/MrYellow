@@ -16,7 +16,7 @@ func _fixed_process(delta):
 		pass
 	elif (started):
 		var game_node = get_node("./..")
-		game_node.do_props()
+		game_node.do_scene_end()
 		started = false
 	
 	pass

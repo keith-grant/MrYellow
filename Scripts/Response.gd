@@ -10,8 +10,8 @@ var outcome_object = {}
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	
-	
+
+
 	pass
 
 
@@ -20,11 +20,11 @@ func init(config):
 	outcome_object.result_text = config["ResultText"]
 	outcome_object.result_audio = config["ResultAudio"]
 	outcome_object.response_outcome = config["MoodChange"]
-	outcome_object.prop = config["Prop"]
-	outcome_object.prop_x = config["PropX"]
-	outcome_object.prop_y = config["PropY"]
+	outcome_object.prop = "prop_sombrero.png"#config["Prop"]
+	outcome_object.prop_x = "579"#config["PropX"]
+	outcome_object.prop_y = "218"#config["PropY"]
 	outcome_object.event_code = config["EventCode"]
-	
+
 	set_text(response_text)
 	pass
 
@@ -37,8 +37,8 @@ func _on_Response_pressed():
 	var mr_yellow = get_node("./../../MrYellow")
 	mr_yellow.set_mood(outcome_object.response_outcome)
 	var game_node = get_node("./../..")
-	
-	
+
+
 	game_node.show_outcome(outcome_object)
-	
+
 	pass # replace with function body
