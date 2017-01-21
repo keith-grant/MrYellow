@@ -16,8 +16,10 @@ func _ready():
 	
 func _fixed_process(delta):
 	
-	mood -= delta
-	
+	mood -= 5 * delta
+	var animation_speed = mood / 50
+	var anim = get_node("AnimationPlayer")
+	anim.set_speed(animation_speed)
 	pass
 	
 func get_mood():
