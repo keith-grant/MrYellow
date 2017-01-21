@@ -4,10 +4,22 @@ extends Sprite
 # var a = 2
 # var b = "textvar"
 
+var mood = 50
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	var mood = 50
-	var node = get_node("ProgressBar")
-	node.set_val(mood)
+	
+	set_fixed_process(true)
+	pass
+	
+func _fixed_process(delta):
+	
+	mood -= delta
+	
+	pass
+	
+func get_mood():
+	return mood
 	pass
