@@ -2,13 +2,13 @@
 
 [ext_resource path="res://Scenes/GameState.tscn" type="PackedScene" id=1]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends Node2D\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\nvar current_scene = null\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tsetScene(\"res://Scenes/GameState.tscn\")\n\tpass\n\n\n\nfunc setScene(scene):\n\t#clean up the current scene\n\tif(current_scene != null) :\n\t\tcurrent_scene.queue_free()\n\t#load the file passed in as the param \"scene\"\n\tvar s = ResourceLoader.load(scene)\n\t#create an instance of our scene\n\tcurrent_scene = s.instance()\n\t# add scene to root\n\tadd_child(current_scene)"
 
 [node name="Game" type="Node2D"]
 
-script/script = SubResource( 2 )
+script/script = SubResource( 1 )
 
 [node name="GameState" parent="." instance=ExtResource( 1 )]
 
