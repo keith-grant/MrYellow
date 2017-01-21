@@ -10,14 +10,14 @@ func _ready():
 	pass
 
 
-func init(config):
+func init(question, responseDictioanry):
 	set_global_pos(Vector2(0,700))
 	var button_instance = load("res://Scenes/Response.tscn")
 	var response_keys = {
-		"key_1" : config["ResponseID1"],
-		"key_2" : config["ResponseID2"],
-		"key_3" : config["ResponseID3"],
-		"key_4" : config["ResponseID4"]
+		"key_1" : question["ResponseID1"],
+		"key_2" : question["ResponseID2"],
+		"key_3" : question["ResponseID3"],
+		"key_4" : question["ResponseID4"]
 	
 	}
 	

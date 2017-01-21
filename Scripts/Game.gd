@@ -3,21 +3,26 @@ extends Node2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-var config = {}
-func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization her
-	
+var questionDictionary = {}
+var responseDictionary = {}
+
+func loadContent(filepath, array):
 	var file = File.new()
-	file.open("res://Docs/Questions.json", file.READ)
+	file.open(filepath, file.READ)
 	var content = file.get_as_text()
 	file.close()
+	array.parse_json(content)
 
-	config.parse_json(content)
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
 	
-	for item in config:
-		print(config[item])
-		pass
+	loadContent("res://Docs/Questions.json", questionDictionary);
+	loadContent("res://Docs/Responses.json", responseDictionary);
+	
+	#for item in config:
+	#	print(config[item])
+	#	pass
 	
 	var mood = 50
 	var node = get_node("ProgressBar")
@@ -42,7 +47,7 @@ func _ready():
 	#}
 	
 	var button_container_1 = button_container.instance()
-	button_container_1.init(config["1"])
+	button_container_1.init(questionDictionary["1"], responseDictionary)
 	add_child(button_container_1)
 	
 	set_fixed_process(true)
@@ -64,7 +69,7 @@ func ask_question():
 	bc_node.free()
 	
 	var button_container_1 = button_container.instance()
-	button_container_1.init(config[str(new_id)])
+	button_container_1.init(questionDictionary[str(new_id)], responseDictionary)
 	add_child(button_container_1)
 	
 
