@@ -63,8 +63,12 @@ func _fixed_process(delta):
 
 func show_outcome(outcome_object):
 	get_node("Subtitle").set_text(outcome_object.result_text)
-	
-	do_props()
+	var sp_node = get_node("SamplePlayer")
+	sp_node.play("test_wav1")
+	sp_node.started = true
+	#while sp_node.is_active():
+	#	pass
+	#do_props()
 	pass
 
 func do_props():
