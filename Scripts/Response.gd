@@ -5,13 +5,6 @@ extends Button
 # var b = "textvar"
 
 var response_text = ""
-var result_text = ""
-var result_audio = ""
-var response_outcome = ""
-var prop = ""
-var prop_x = ""
-var prop_y = ""
-var event_code = ""
 var outcome_object = {}
 
 func _ready():
@@ -24,9 +17,9 @@ func _ready():
 
 func init(config):
 	response_text = config["ResponseText"]
-	result_text = config["ResultText"]
-	result_audio = config["ResultAudio"]
-	response_outcome = config["MoodChange"]
+	outcome_object.result_text = config["ResultText"]
+	outcome_object.result_audio = config["ResultAudio"]
+	outcome_object.response_outcome = config["MoodChange"]
 	outcome_object.prop = config["Prop"]
 	outcome_object.prop_x = config["PropX"]
 	outcome_object.prop_y = config["PropY"]
@@ -42,7 +35,7 @@ func _on_Response_mouse_enter():
 
 func _on_Response_pressed():
 	var mr_yellow = get_node("./../../MrYellow")
-	mr_yellow.set_mood(response_outcome)
+	mr_yellow.set_mood(outcome_object.response_outcome)
 	var game_node = get_node("./../..")
 	
 	

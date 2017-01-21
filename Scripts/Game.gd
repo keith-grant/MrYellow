@@ -62,7 +62,8 @@ func _fixed_process(delta):
 	node.set_val(mood)
 
 func show_outcome(outcome_object):
-	print(outcome_object)
+	get_node("Subtitle").set_text(outcome_object.result_text)
+	
 	do_props()
 	pass
 
@@ -85,6 +86,8 @@ func ask_question():
 	var button_container_2 = button_container.instance()
 	bc_node.replace_by(button_container_2, false)
 	button_container_2.init(questionDictionary[str(new_id)], responseDictionary)
+	get_node("Subtitle").set_text(questionDictionary[str(new_id)]["QuestionText"])
+	
 	add_child(button_container_2)
 
 
