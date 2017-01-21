@@ -18,4 +18,6 @@ shortcut = null
 flat = false
 script/script = ExtResource( 1 )
 
+[connection signal="mouse_enter" from="." to="." method="_on_Response_mouse_enter"]
+
 
