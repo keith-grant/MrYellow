@@ -61,8 +61,8 @@ func _fixed_process(delta):
 	var node = get_node("ProgressBar")
 	node.set_val(mood)
 
-func show_outcome():
-
+func show_outcome(outcome_object):
+	print(outcome_object)
 	do_props()
 	pass
 
@@ -72,6 +72,8 @@ func do_props():
 		win()
 	elif (mood <= 0):
 		lose()
+	else:
+		ask_question()
 	pass
 
 func ask_question():
@@ -86,10 +88,10 @@ func ask_question():
 	add_child(button_container_2)
 
 
-func win()
+func win():
 	pass
 	
-func lose()
+func lose():
 	pass
 
 func _on_TestButton_pressed():
