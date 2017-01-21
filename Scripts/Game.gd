@@ -66,14 +66,12 @@ func ask_question():
 	var new_id = randi()%11+1
 	var button_container = load("res://Scenes/ButtonContainer.tscn")
 	var bc_node = get_node("./ButtonContainer")
-	bc_node.free()
 	
-	var button_container_1 = button_container.instance()
-	button_container_1.init(questionDictionary[str(new_id)], responseDictionary)
-	add_child(button_container_1)
+	var button_container_2 = button_container.instance()
+	bc_node.replace_by(button_container_2, false)
+	button_container_2.init(questionDictionary[str(new_id)], responseDictionary)
+	add_child(button_container_2)
 	
-
-
 
 func _on_TestButton_pressed():
 	ask_question()

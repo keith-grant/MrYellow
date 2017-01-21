@@ -44,21 +44,6 @@ range/rounded = false
 percent/visible = false
 script/script = ExtResource( 4 )
 
-[node name="TestButton" type="Button" parent="."]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 54.0
-margin/top = 341.0
-margin/right = 274.0
-margin/bottom = 415.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-flat = false
-
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
 config/polyphony = 1
@@ -75,7 +60,5 @@ default/filter/gain = 1.0
 default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
-
-[connection signal="pressed" from="TestButton" to="." method="_on_TestButton_pressed"]
 
 

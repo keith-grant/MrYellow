@@ -11,6 +11,12 @@ func _ready():
 
 
 func init(question, responseDictionary):
+	var children = get_children()
+	
+	for child in children:
+		remove_child(child)
+		child.queue_free()
+	
 	set_global_pos(Vector2(0,700))
 	var button_instance = load("res://Scenes/Response.tscn")
 	var response_keys = {

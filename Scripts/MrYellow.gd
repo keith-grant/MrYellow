@@ -25,3 +25,10 @@ func _fixed_process(delta):
 func get_mood():
 	return mood
 	pass
+	
+func set_mood(improve):
+	if(improve == "Positive") :
+		mood += 15
+	else:
+		mood -= 15
+	pass
