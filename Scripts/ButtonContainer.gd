@@ -10,7 +10,7 @@ func _ready():
 	pass
 
 
-func init(question, responseDictioanry):
+func init(question, responseDictionary):
 	set_global_pos(Vector2(0,700))
 	var button_instance = load("res://Scenes/Response.tscn")
 	var response_keys = {
@@ -24,5 +24,5 @@ func init(question, responseDictioanry):
 	for key in response_keys :
 		if(response_keys[key] != ""):
 			var button = button_instance.instance()
-			button.init(response_keys[key])
+			button.init(responseDictionary[response_keys[key]])
 			add_child(button)

@@ -11,13 +11,15 @@ var result_audio = ""
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	
+	
 	pass
 
 
 func init(config):
-	response_text = config
-	#result_text = config["ResultText"]
-	#result_audio = config["ResultAudio"]
+	response_text = config["ResponseText"]
+	result_text = config["ResultText"]
+	result_audio = config["ResultAudio"]
 	set_text(response_text)
 	pass
 
